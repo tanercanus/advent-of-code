@@ -41,7 +41,7 @@ public class Part2 {
         }
 
         System.out.println(countTrees.stream().reduce(BigInteger.ONE, BigInteger::multiply));
-        
+
     }
 
     public static BigInteger goWithPath(int right, int down, int columnSize, List<List<String>> list) {
