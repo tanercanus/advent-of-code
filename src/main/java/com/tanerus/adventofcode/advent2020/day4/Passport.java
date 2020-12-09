@@ -1,5 +1,8 @@
 package com.tanerus.adventofcode.advent2020.day4;
 
+import lombok.ToString;
+
+@ToString
 public class Passport {
     private String byr;
     private String iyr;
@@ -73,4 +76,5 @@ public class Passport {
     public void setCid(String cid) {
         this.cid = cid;
     }
+
 }

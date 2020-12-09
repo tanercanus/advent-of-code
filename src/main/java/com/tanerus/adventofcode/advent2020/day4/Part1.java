@@ -54,7 +54,7 @@ The first half of this puzzle is complete! It provides one gold star: *
 public class Part1 {
     public static void main(String[] args) {
         String[] inputArray = Input.initializeString();
-        List<Passport> passportList = createAllPassport(inputArray);
+        List<Passport> passportList = createAllPassport(inputArray, false);
         long count = validPasswordsCount(passportList);
         System.out.println(count);
     }
@@ -66,7 +66,7 @@ public class Part1 {
         ).count();
     }
 
-    public static List<Passport> createAllPassport(String[] inputArray) {
+    public static List<Passport> createAllPassport(String[] inputArray, boolean addExtraValidation) {
 
         List<Passport> passportList = new ArrayList<>();
 
@@ -92,32 +92,7 @@ public class Part1 {
                 for (int j = 0; j < values.length; j++) {
                     isAddedToList = true;
                     String[] parseValues = values[j].split(":");
-                    switch (parseValues[0]) {
-                        case "byr":
-                            passport.setByr(parseValues[1]);
-                            break;
-                        case "iyr":
-                            passport.setIyr(parseValues[1]);
-                            break;
-                        case "eyr":
-                            passport.setEyr(parseValues[1]);
-                            break;
-                        case "hgt":
-                            passport.setHgt(parseValues[1]);
-                            break;
-                        case "hcl":
-                            passport.setHcl(parseValues[1]);
-                            break;
-                        case "ecl":
-                            passport.setEcl(parseValues[1]);
-                            break;
-                        case "pid":
-                            passport.setPid(parseValues[1]);
-                            break;
-                        case "cid":
-                            passport.setCid(parseValues[1]);
-                            break;
-                    }
+                    Util.addToPassport(parseValues, passport, addExtraValidation);
                 }
             }
 
@@ -132,7 +107,6 @@ public class Part1 {
             }
 
         }
-
 
         return passportList;
 
