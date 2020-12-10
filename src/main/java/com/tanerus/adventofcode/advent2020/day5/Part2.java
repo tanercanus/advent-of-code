@@ -59,7 +59,7 @@ public class Part2 {
 
     public static int missingSeatId(List<Integer> orderedList) {
         int missindSeat = 0;
-        
+
         for (int i = 1; i < orderedList.size(); i++) {
             if (orderedList.get(i) - orderedList.get(i - 1) > 1) {
                 missindSeat = orderedList.get(i - 1) + 1;
