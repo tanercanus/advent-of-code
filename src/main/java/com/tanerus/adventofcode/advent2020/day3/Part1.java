@@ -1,10 +1,7 @@
 package com.tanerus.adventofcode.advent2020.day3;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /*
 * --- Day 3: Toboggan Trajectory ---
